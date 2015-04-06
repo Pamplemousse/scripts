@@ -15,5 +15,5 @@ These scripts had been developed using TDD with the [shunit2](https://shunit2.go
 To launch the tests suite:
 
 ```
-./spec/*
+./spec/all.sh
 ```

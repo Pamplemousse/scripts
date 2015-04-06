@@ -1,20 +1,22 @@
 #! /bin/zsh
-test_returns_true_if_folder_contains_a_dot_git_subfolder() {
-  mkdir "${test_dir}/.git"
-  assertTrue 'returns true if folder contains a .git' "is_git_folder ${test_dir}"
+
+test_returns_true_if_folder_contains_a_package_dot_json() {
+  touch "${test_dir}/package.json"
+  assertTrue 'returns true if folder contains a package.json' "is_node_project ${test_dir}"
 }
 
-test_returns_false_if_folder_does_not_contains_a_dot_git_subfolder() {
-  assertFalse 'returns false if folder does not contains a .git' "is_git_folder ${test_dir}"
+
+test_returns_false_if_folder_does_not_contains_a_package_dot_json() {
+  assertFalse 'returns false if folder does not contains a package.json' "is_node_project ${test_dir}"
 }
 
 test_returns_an_error_message_if_no_folder_is_passed_as_parameter() {
-  is_git_folder >${stdout_file} 2>${stderr_file}
+  is_node_project >${stdout_file} 2>${stderr_file}
   assertNotNull 'returns an error message if no folder is passed as parameter' "`cat ${stderr_file}`"
 }
 
 test_returns_an_error_message_if_folder_does_not_exists() {
-  is_git_folder "${test_dir}_diff" >${stdout_file} 2>${stderr_file}
+  is_node_project "${test_dir}_diff" >${stdout_file} 2>${stderr_file}
   assertNotNull 'returns an error message if folder does not exists' "`cat ${stderr_file}`"
 }
 
@@ -42,7 +44,7 @@ tearDown() {
 }
 
 # load script to test
-source ~/Workspace/tools/scripts/lib/is_git_folder.sh
+source ~/Workspace/tools/scripts/lib/is_node_project.sh
 
 # load shunit2 with zsh support
 setopt shwordsplit
