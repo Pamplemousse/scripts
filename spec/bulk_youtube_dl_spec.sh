@@ -59,4 +59,4 @@ source lib/bulk_youtube_dl.sh
 # load shunit2 with zsh support
 setopt shwordsplit
 SHUNIT_PARENT=$0
-. ~/Workspace/tools/shunit2-2.1.6/src/shunit2
+. "$(which shunit2)"

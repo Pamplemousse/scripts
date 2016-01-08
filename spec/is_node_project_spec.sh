@@ -49,4 +49,4 @@ source lib/is_node_project.sh
 # load shunit2 with zsh support
 setopt shwordsplit
 SHUNIT_PARENT=$0
-. ~/Workspace/tools/shunit2-2.1.6/src/shunit2
+. "$(which shunit2)"

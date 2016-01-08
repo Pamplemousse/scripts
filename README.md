@@ -10,10 +10,13 @@ source ~/scripts/lib/*
 ```
 
 ## Tests
-These scripts had been developed using TDD with the [shunit2](https://shunit2.googlecode.com/svn/trunk/source/2.1/doc/shunit2.html) framework to write shell tests.
 
-To launch the tests suite:
+You will need the [shunit2](https://shunit2.googlecode.com/svn/trunk/source/2.1/doc/shunit2.html) framework to write and run the tests.
 
-```
+```bash
+# shunit2 is actually in the ubuntu repos
+sudo apt-get install shunit2
+
+# run all the tests
 ./spec/all.sh
 ```
