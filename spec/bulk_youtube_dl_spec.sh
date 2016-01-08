@@ -54,7 +54,7 @@ tearDown() {
 }
 
 # load script to test
-source ~/Workspace/tools/scripts/lib/bulk_youtube_dl.sh
+source lib/bulk_youtube_dl.sh
 
 # load shunit2 with zsh support
 setopt shwordsplit

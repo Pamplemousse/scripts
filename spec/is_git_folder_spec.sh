@@ -42,7 +42,7 @@ tearDown() {
 }
 
 # load script to test
-source ~/Workspace/tools/scripts/lib/is_git_folder.sh
+source lib/is_git_folder.sh
 
 # load shunit2 with zsh support
 setopt shwordsplit

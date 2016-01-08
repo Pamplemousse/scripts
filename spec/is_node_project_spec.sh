@@ -44,7 +44,7 @@ tearDown() {
 }
 
 # load script to test
-source ~/Workspace/tools/scripts/lib/is_node_project.sh
+source lib/is_node_project.sh
 
 # load shunit2 with zsh support
 setopt shwordsplit
