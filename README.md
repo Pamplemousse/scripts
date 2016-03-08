@@ -1,8 +1,12 @@
 # Useful scripts for personal purposes
 
-Note that I use zsh...
+![](https://travis-ci.org/Pamplemousse/scripts.svg?branch=master)
+
 
 ## Use them
+
+Note that I use zsh...
+
 ```
 git clone git@github.com:Pamplemousse/scripts.git
 mv scripts ~/scripts
