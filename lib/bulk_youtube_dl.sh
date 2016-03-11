@@ -23,9 +23,7 @@ function bulk_youtube_dl {
 
   zmodload zsh/mapfile
   file_lines=( "${(f)mapfile[$1]}" )
-  for url in $file_lines
-  do
+  for url in $file_lines; do
     youtube-dl --exec "mv {} $2" -x --audio-format mp3 -o "%(title)s.%(ext)s" $url
-    (( POS++ ))
   done
 }

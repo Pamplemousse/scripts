@@ -11,13 +11,13 @@ test_returns_false_if_folder_does_not_contains_a_package_dot_json() {
 }
 
 test_returns_an_error_message_if_no_folder_is_passed_as_parameter() {
-  is_node_project >${stdout_file} 2>${stderr_file}
-  assertNotNull 'returns an error message if no folder is passed as parameter' "`cat ${stderr_file}`"
+  is_node_project >"${stdout_file}" 2>"${stderr_file}"
+  assertNotNull 'returns an error message if no folder is passed as parameter' "$(cat "${stderr_file}")"
 }
 
 test_returns_an_error_message_if_folder_does_not_exists() {
-  is_node_project "${test_dir}_diff" >${stdout_file} 2>${stderr_file}
-  assertNotNull 'returns an error message if folder does not exists' "`cat ${stderr_file}`"
+  is_node_project "${test_dir}_diff" >"${stdout_file}" 2>"${stderr_file}"
+  assertNotNull 'returns an error message if folder does not exists' "$(cat "${stderr_file}")"
 }
 
 
@@ -48,5 +48,5 @@ source lib/is_node_project.sh
 
 # load shunit2 with zsh support
 setopt shwordsplit
-SHUNIT_PARENT=$0
+export SHUNIT_PARENT=$0
 . "$(which shunit2)"
