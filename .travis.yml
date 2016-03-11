@@ -1,11 +1,13 @@
 ---
 language: bash
+sudo: required
+dist: trusty
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y shunit2 zsh
+  - sudo apt-get install -y shunit2 zsh libav-tools
   - sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
   - sudo chmod a+rx /usr/local/bin/youtube-dl
 
 script:
-  - zsh ./spec/all.sh
+  - ./spec/all.sh
